@@ -138,9 +138,9 @@ export function injectPositive(values: number[]): number[] {
             .slice(0, firstNegativeIndex)
             .reduce((curr_total, num) => curr_total + num, 0);
         return [
-            ...values.slice(0, firstNegativeIndex + 1), // Keep numbers up to the first negative
-            sumBeforeNegative, // Insert the computed sum
-            ...values.slice(firstNegativeIndex + 1), // Add remaining numbers
+            ...values.slice(0, firstNegativeIndex + 1),
+            sumBeforeNegative,
+            ...values.slice(firstNegativeIndex + 1),
         ];
     } else {
         const sum: number = values.reduce(
